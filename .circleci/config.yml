@@ -170,7 +170,7 @@ jobs:
 # WORKFLOW - Run jobs in sequence
 # ==========================================
 workflows:
-  build_test_publish:
+  build_test_scan_publish_deploy:
     jobs:
       - build
       - snyk_scan
@@ -185,7 +185,6 @@ workflows:
             - snyk_scan
             - snyk_code
       - deploy:
-          context: docker-hub
           requires:
             - publish
       - notify:
