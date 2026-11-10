@@ -183,6 +183,7 @@ workflows:
           requires:
             - test
       - deploy:
+          context: docker-hub
           requires:
             - publish
       - notify:
