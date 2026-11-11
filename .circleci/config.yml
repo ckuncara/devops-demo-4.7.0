@@ -182,6 +182,8 @@ workflows:
           context: docker-hub
           requires:
             - test
+            - snyk_scan
+            - snyk_code
       - deploy:
           context: docker-hub
           requires:
